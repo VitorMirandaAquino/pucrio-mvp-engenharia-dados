@@ -70,4 +70,4 @@ Informações sobre o município e UF de destino dos recursos.
 | `uf_destino` | **COLUNA DERIVADA:** Sigla da UF do destino. | `STRING` | |
 
 ---
-![MODELAGEM](../fotos/Modelagem Dimensional - PUCRIO.drawio.png)
+![MODELAGEM](../imagens/Modelagem Dimensional - PUCRIO.drawio.png)
