@@ -17,14 +17,12 @@
 1. **Objetivo do Trabalho**
 2. **Perguntas de Negócio**
 3. **Busca e Seleção da Base de Dados**
-4. **Coleta e Armazenamento na Nuvem**
-5. **Modelagem de Dados (DW / Data Lake)**
-6. **Catálogo de Dados (Data Dictionary)**
-7. **Pipeline de ETL (Bronze → Silver → Gold)**
-8. **Análise – Qualidade de Dados**
-9. **Análise – Respostas ao Problema**
-10. **Dashboard Final**
-11. **Autoavaliação**
+4. **Modelagem de Dados (DW / Data Lake)**
+5. **Pipeline de ETL (Bronze → Silver → Gold)**
+6. **Análise – Qualidade de Dados**
+7. **Análise – Respostas ao Problema**
+8. **Dashboard Final**
+9. **Autoavaliação**
 
 ---
 
@@ -65,44 +63,21 @@ Esse MVP abrange **coleta**, **modelagem dimensional**, **ETL**, **governança**
 
 **Portal da Transparência – Emendas Parlamentares**
 
-Website oficial do Governo Federal, base já pública por lei.
-
-**Formatos disponíveis:**
+**Formato utilizado:**
 
 - Downloads CSV
 
----
+**Câmaro dos deputados**
 
-# 4. **COLETA E ARMAZENAMENTO**
+**Formato utilizado:**
 
-## Como foi feita a coleta:
-
-- A API é paginada → necessário iterar `offset` e `limit`.
-- Criado script de coleta em Python (notebook Databricks).
-- Cada requisição salva um arquivo JSON no **Data Lake (Bronze Layer)**.
-
-## Estrutura de pastas (recomendada):
-
-```
-/bronze/emendas/ano=2020/*.json
-/bronze/emendas/ano=2021/*.json
-/bronze/emendas/ano=2022/*.json
-/parlamentares/*.json
-/partidos/*.json
-
-```
-
-## Evidências armazenadas:
-
-- Pasta *bronze* no DBFS
-- Arquivos JSON organizados por ano
-- Trecho da chamada da API
+- Requisições por API
 
 ---
 
-# 5. **MODELO DE DADOS – DATA WAREHOUSE (ESQUEMA ESTRELA)**
+# 4. **MODELO DE DADOS – DATA WAREHOUSE (ESQUEMA ESTRELA)**
 
-*(versão completa está no Anexo A)*
+*A modelagem completa está na pasta de documentações*
 
 ### **Fato Principal**
 
@@ -116,25 +91,19 @@ Website oficial do Governo Federal, base já pública por lei.
 - **dim_tempo**
 - **dim_funcao_governamental**
 
-### Justificativa:
 
-- Simplifica consultas exploratórias
-- Suporta dashboards
-- Alinha-se a boas práticas de BI
 
 ---
 
----
+# 5. **PIPELINE ETL (STAGING → BRONZE → SILVER → GOLD)**
 
-# 7. **PIPELINE ETL (BRONZE → SILVER → GOLD)**
-
-*(versão completa no Anexo C)*
+### **Staging Layer – Upload de arquivos**
+- Upload de arquivos de emendas parlamentares
 
 ### **Bronze Layer – Dados brutos**
 
-- Estrutura original JSON
-- Sem limpeza
-- Apenas padronização de armazenamento
+- Criação de uma tabela de emendas parlamentares com os CSVs da camada staging
+- Criação de uma tabela de parlamentares com os dados obtidos via api
 
 ### **Silver Layer – Limpeza e normalização**
 
@@ -155,7 +124,7 @@ Transformações principais:
 
 ---
 
-# 8. **ANÁLISE – QUALIDADE DE DADOS**
+# 6. **ANÁLISE – QUALIDADE DE DADOS**
 
 Checklist executado:
 
@@ -173,9 +142,8 @@ Cada problema foi documentado e tratado na Silver Layer.
 
 ---
 
-# 9. **ANÁLISE – RESPOSTAS AO PROBLEMA**
+# 7. **ANÁLISE – RESPOSTAS AO PROBLEMA**
 
-*(exemplo de interpretações que você colocará com base no SQL real)*
 
 ### Exemplos de descobertas:
 
@@ -193,7 +161,7 @@ Cada insight é acompanhado de:
 
 ---
 
-# 10. **DASHBOARD FINAL**
+# 8. **DASHBOARD FINAL**
 
 ### Ferramenta:
 
@@ -219,7 +187,7 @@ Power BI / Tableau / Databricks SQL
 
 ---
 
-# 11. **AUTOAVALIAÇÃO**
+# 9. **AUTOAVALIAÇÃO**
 
 Inclua tópicos como:
 
