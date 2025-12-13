@@ -18,3 +18,4 @@ notebooks/0_criacao_catalogo.ipynb
 notebooks/1_ingestao_dados.ipynb
 notebooks/2_tratamento_de_dados.ipynb
 notebooks/3_modelagem_dimensional.ipynb
+notebooks/4_analises_e_autoavaliacao.ipynb

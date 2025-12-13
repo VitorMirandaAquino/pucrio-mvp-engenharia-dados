@@ -22,9 +22,6 @@
 6. **Análise – Qualidade de Dados**
 7. **Análise – Respostas ao Problema**
 8. **Dashboard Final**
-9. **Autoavaliação**
-
----
 
 ---
 
@@ -51,9 +48,6 @@ Esse MVP abrange **coleta**, **modelagem dimensional**, **ETL**, **governança**
 4. Para onde (UF/município) cada parlamentar direciona sua verba?
 5. Qual a razão entre verba empenhada vs. paga? Há diferenças significativas?
 6. Quais áreas recebem mais recursos ao longo do tempo?
-7. Para um parlamentar específico:
-    - Para quais áreas ele destina recursos?
-    - Quais municípios são mais beneficiados?
 
 ---
 
@@ -136,22 +130,11 @@ Checklist executado:
 
 ✔ Categorias desconhecidas de função → normalizadas
 
-✔ Possíveis outliers em valores > R$ 50 milhões
-
 Cada problema foi documentado e tratado na Silver Layer.
 
 ---
 
 # 7. **ANÁLISE – RESPOSTAS AO PROBLEMA**
-
-
-### Exemplos de descobertas:
-
-- **O partido X** é o que mais destinou verbas à saúde em 2021.
-- **O parlamentar Y** concentrou mais de 60% de suas emendas em apenas **2 municípios**.
-- **Educação e saúde** representam **74% do gasto total** das emendas de 2020–2023.
-- Alguns parlamentares apresentam **baixa taxa de pagamento** mesmo com alto empenho → alerta de eficiência.
-- Municípios de pequeno porte aparecem como maiores beneficiados em algumas regiões — padrão incomum.
 
 Cada insight é acompanhado de:
 
@@ -177,24 +160,4 @@ Power BI / Tableau / Databricks SQL
 - Função/Subfunção
 - Estado UF
 
-**Visuais sugeridos**:
 
-- Ranking de parlamentares por valor total
-- Mapa de calor dos municípios beneficiados
-- Barras: verba por área
-- Linha: evolução anual por partido
-- Indicadores: % pago vs % empenhado
-
----
-
-# 9. **AUTOAVALIAÇÃO**
-
-Inclua tópicos como:
-
-- Quais perguntas foram respondidas
-- Quais não foram e por quê
-- Dificuldades técnicas (API lenta, municípios duplicados etc.)
-- Melhorias futuras:
-    - Incluir liquidação de pagamentos
-    - Dashboard mais avançado
-    - Machine Learning para detectar padrões suspeitos
